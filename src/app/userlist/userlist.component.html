@@ -1,0 +1,41 @@
+
+<app-craeteuser></app-craeteuser>
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead class="table table-danger">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Subtype</th>
+                <th scope="col">Status</th>
+                <th scope="col" colspan="3" style="text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let user of userList; let i=index">
+                <td scope="row">{{i+1}}</td>
+                <td scope="row">{{user.name}}</td>
+                <td scope="row">{{user.gender}}</td>
+                <td scope="row">{{user.subType}}</td>
+               
+                <td scope="row">{{user.status}}</td>
+              <td><button class="btn btn-primary" (click)="EditUserDetails(user,i)">Edit</button></td>
+              <td><button class="btn btn-danger" (click)="deletebtn(user.name)">delete</button></td>
+                <td><button class="admin-user-show-detail-button" (click)="showUserDetail(user)"> +</button></td>
+            
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <ng-template #online>
+    <td>
+        <i style="color: green;" class="bi bi-person-check-fill"></i>
+    </td>
+</ng-template>
+
+<ng-template #male>
+    <td>
+        <i style="color: green;" class="bi bi-gender-male"></i>
+    </td>
+</ng-template> -->
